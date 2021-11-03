@@ -6,7 +6,8 @@
 # 고차 함수
 - 함수를 값으로 다루는 함수
 
-## 함수를 인자로 받아서 실행하는 함수
+
+## 함수를 인자로 받아서 실행하는 함수(고차 함수 유형 1)
 - apply1
 - times
 
@@ -16,7 +17,7 @@
   log(apply1(add2));
   log(apply1(a => a - 1));
 
-  const times = (f, n) => {
+  const times = (f, n) => { 
     let i = -1;
     while (++i < n) f(i);
   };
@@ -26,11 +27,11 @@
   times(a => log(a + 10), 3);
 </script>
 
-## 함수를 만들어 리턴하는 함수 (클로저를 만들어 리턴하는 함수)
+## 함수를 만들어 리턴하는 함수 (클로저를 만들어 리턴하는 함수)(고차 함수 유형 2)
 - addMaker
 
 <script>
-  const addMaker = a => b => a + b;
+  const addMaker = a => b => a + b; //함수 b => a + b를 리턴
   const add10 = addMaker(10);
   log(add10(5));
   log(add10(10));
